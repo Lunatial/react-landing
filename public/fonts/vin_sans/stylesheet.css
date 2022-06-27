@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Thin.eot');
+    src: local('Vin Sans Pro Thin'), local('VinSansPro-Thin'),
+        url('VinSansPro-Thin.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Thin.woff2') format('woff2'),
+        url('VinSansPro-Thin.woff') format('woff'),
+        url('VinSansPro-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-ExtraLight.eot');
+    src: local('Vin Sans Pro ExtraLight'), local('VinSansPro-ExtraLight'),
+        url('VinSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-ExtraLight.woff2') format('woff2'),
+        url('VinSansPro-ExtraLight.woff') format('woff'),
+        url('VinSansPro-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-ExtraBoldItalic.eot');
+    src: local('Vin Sans Pro ExtraBold Italic'), local('VinSansPro-ExtraBoldItalic'),
+        url('VinSansPro-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-ExtraBoldItalic.woff2') format('woff2'),
+        url('VinSansPro-ExtraBoldItalic.woff') format('woff'),
+        url('VinSansPro-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-SemiBoldItalic.eot');
+    src: local('Vin Sans Pro Semi Bold Italic'), local('VinSansPro-SemiBoldItalic'),
+        url('VinSansPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-SemiBoldItalic.woff2') format('woff2'),
+        url('VinSansPro-SemiBoldItalic.woff') format('woff'),
+        url('VinSansPro-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-BoldItalic.eot');
+    src: local('Vin Sans Pro Bold Italic'), local('VinSansPro-BoldItalic'),
+        url('VinSansPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-BoldItalic.woff2') format('woff2'),
+        url('VinSansPro-BoldItalic.woff') format('woff'),
+        url('VinSansPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-SemiBold.eot');
+    src: local('Vin Sans Pro Semi Bold'), local('VinSansPro-SemiBold'),
+        url('VinSansPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-SemiBold.woff2') format('woff2'),
+        url('VinSansPro-SemiBold.woff') format('woff'),
+        url('VinSansPro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Light.eot');
+    src: local('Vin Sans Pro Light'), local('VinSansPro-Light'),
+        url('VinSansPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Light.woff2') format('woff2'),
+        url('VinSansPro-Light.woff') format('woff'),
+        url('VinSansPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-MediumItalic.eot');
+    src: local('Vin Sans Pro Medium Italic'), local('VinSansPro-MediumItalic'),
+        url('VinSansPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-MediumItalic.woff2') format('woff2'),
+        url('VinSansPro-MediumItalic.woff') format('woff'),
+        url('VinSansPro-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-ExtraLightItalic.eot');
+    src: local('Vin Sans Pro ExtraLight Italic'), local('VinSansPro-ExtraLightItalic'),
+        url('VinSansPro-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-ExtraLightItalic.woff2') format('woff2'),
+        url('VinSansPro-ExtraLightItalic.woff') format('woff'),
+        url('VinSansPro-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-ExtraBold.eot');
+    src: local('Vin Sans Pro ExtraBold'), local('VinSansPro-ExtraBold'),
+        url('VinSansPro-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-ExtraBold.woff2') format('woff2'),
+        url('VinSansPro-ExtraBold.woff') format('woff'),
+        url('VinSansPro-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Regular.eot');
+    src: local('Vin Sans Pro Regular'), local('VinSansPro-Regular'),
+        url('VinSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Regular.woff2') format('woff2'),
+        url('VinSansPro-Regular.woff') format('woff'),
+        url('VinSansPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Medium.eot');
+    src: local('Vin Sans Pro Medium'), local('VinSansPro-Medium'),
+        url('VinSansPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Medium.woff2') format('woff2'),
+        url('VinSansPro-Medium.woff') format('woff'),
+        url('VinSansPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-LightItalic.eot');
+    src: local('Vin Sans Pro Light Italic'), local('VinSansPro-LightItalic'),
+        url('VinSansPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-LightItalic.woff2') format('woff2'),
+        url('VinSansPro-LightItalic.woff') format('woff'),
+        url('VinSansPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Bold.eot');
+    src: local('Vin Sans Pro Bold'), local('VinSansPro-Bold'),
+        url('VinSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Bold.woff2') format('woff2'),
+        url('VinSansPro-Bold.woff') format('woff'),
+        url('VinSansPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-ThinItalic.eot');
+    src: local('Vin Sans Pro Thin Italic'), local('VinSansPro-ThinItalic'),
+        url('VinSansPro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-ThinItalic.woff2') format('woff2'),
+        url('VinSansPro-ThinItalic.woff') format('woff'),
+        url('VinSansPro-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Vin Sans Pro';
+    src: url('VinSansPro-Italic.eot');
+    src: local('Vin Sans Pro Italic'), local('VinSansPro-Italic'),
+        url('VinSansPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('VinSansPro-Italic.woff2') format('woff2'),
+        url('VinSansPro-Italic.woff') format('woff'),
+        url('VinSansPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
