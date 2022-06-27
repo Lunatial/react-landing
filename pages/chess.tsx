@@ -1,5 +1,8 @@
 import React, {ReactNode, useState} from "react"
-import {DndProvider, useDrag } from 'react-dnd'
+
+import Link from 'next/link'
+
+import {DndProvider, useDrag, useDrop} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
 
 import NextSeo from "../components/NextSeo"
@@ -62,14 +65,73 @@ function canMoveKnight(toX: number, toY: number, knightPosition: KnightCoords) {
     )
 }
 
-// function BoardSquare({ x: number, y: number, children: ReactNode }) {
-//     const black = (x + y) % 2 === 1
-//     return <Square black={black}>{children}</Square>
-// }
+type OverlayProps = {
+    color: string
+}
+
+const Overlay = ({color}: OverlayProps) => {
+    return <div
+        style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
+            width: '100%',
+            zIndex: 1,
+            opacity: 0.5,
+            backgroundColor: color,
+        }}
+    />
+}
+
+type BoardSquareProps = {
+    x: number
+    y: number
+    children: ReactNode,
+    setKnightPosition: any
+    knightCoords: KnightCoords
+}
+
+function BoardSquare({x, y, children, setKnightPosition, knightCoords}: BoardSquareProps) {
+    const black = (x + y) % 2 === 1
+    const [{isOver, canDrop}, drop] = useDrop(() => ({
+        accept: ItemTypes.KNIGHT,
+        drop: () => setKnightPosition([x, y]),
+        canDrop: () => canMoveKnight(x, y, knightCoords),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+            canDrop: !!monitor.canDrop()
+        }),
+    }), [x, y])
+
+    return (
+        <div
+            ref={drop}
+            style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+            }}
+        >
+            <Square black={black}>{children}</Square>
+            {isOver && !canDrop && <Overlay color="red"/>}
+            {!isOver && canDrop && <Overlay color="yellow"/>}
+            {isOver && canDrop && <Overlay color="green"/>}
+        </div>
+    )
+}
 
 function handleSquareClick(toX: number, toY: number, knightPosition: KnightCoords, setKnightPosition: any) {
     if (canMoveKnight(toX, toY, knightPosition)) {
         setKnightPosition([toX, toY])
+    }
+}
+
+function renderPiece(x: number, y: number, pos: KnightCoords) {
+    const knightX = pos[0]
+    const knightY = pos[1]
+    if (x === knightX && y === knightY) {
+        return <Knight/>
     }
 }
 
@@ -81,35 +143,28 @@ function renderSquare(i: number, knightCoords: KnightCoords, setKnightPosition: 
 
     const x = i % 8
     const y = Math.floor(i / 8)
-    const isKnightHere = x === knightX && y === knightY
-    const black = (x + y) % 2 === 1
-    const piece = isKnightHere ? <Knight/> : null
+    // const isKnightHere = x === knightX && y === knightY
+    // const black = (x + y) % 2 === 1
+    // const piece = isKnightHere ? <Knight/> : null
 
     return (
-        <div
-            key={i}
-            style={{
-                width: '12.5%',
-                height: '12.5%',
-                cursor: canMoveKnight(x, y, [knightX, knightY]) ? "pointer" : "default"
-            }}
-            onClick={() => handleSquareClick(x, y, [knightX, knightY], setKnightPosition)}>
-            <Square black={black}>{piece}</Square>
+        <div key={i} style={{width: '12.5%', height: '12.5%'}}>
+            <BoardSquare x={x} y={y} setKnightPosition={setKnightPosition} knightCoords={knightCoords}>
+                {renderPiece(x, y, knightCoords)}
+            </BoardSquare>
         </div>
     )
 }
 
-type  BoardProps = {
-    knightPosition: KnightCoords
-    setKnightPosition: any
-}
 
-function Board({knightPosition, setKnightPosition}: BoardProps) {
+function Board() {
+    const [knightPosition, setKnightPosition] = useState<KnightCoords>([0, 0])
+
     const squares = []
     for (let i = 0; i < 64; i++) {
         squares.push(renderSquare(i, knightPosition, setKnightPosition))
     }
-
+    console.log(knightPosition)
     return (
         <div
             style={{
@@ -125,7 +180,6 @@ function Board({knightPosition, setKnightPosition}: BoardProps) {
 }
 
 const ChessPage = () => {
-    const [knightPosition, setKnightPosition] = useState<KnightCoords>([0, 0])
 
     return (
         <DndProvider backend={HTML5Backend}>
@@ -134,11 +188,26 @@ const ChessPage = () => {
                 description={`React-landing-description`}
             />
 
-            {/*{*/}
-            {/*    observe((knightPosition: KnightCoords) => <Board knightPosition={knightPosition} />)*/}
-            {/*}*/}
+            <h1>ChessPage</h1>
+            <ul style={{display: 'flex', flexDirection: 'row', gap: '1rem'}}>
+                <li>
+                    <Link href="/">
+                        <a>Home</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/chess">
+                        <a>chess</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/dnd">
+                        <a>dnd</a>
+                    </Link>
+                </li>
+            </ul>
 
-            <Board knightPosition={knightPosition} setKnightPosition={setKnightPosition}/>
+            <Board/>
 
         </DndProvider>
     )

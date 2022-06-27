@@ -1,16 +1,10 @@
-import NextSeo from "../components/NextSeo";
+import React from 'react';
+import Link from "next/link";
 
-import Link from 'next/link'
-
-const IndexPage = () => {
+const DnDExapmlePage = () => {
     return (
-        <>
-            <NextSeo
-                title="React-landing"
-                description={`React-landing-description`}
-            />
-
-            <h1>IndexPage</h1>
+        <div>
+            <h1>DnDExapmlePage</h1>
             <ul style={{display: 'flex', flexDirection: 'row', gap: '1rem'}}>
                 <li>
                     <Link href="/">
@@ -28,8 +22,8 @@ const IndexPage = () => {
                     </Link>
                 </li>
             </ul>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default IndexPage
+export default DnDExapmlePage;
