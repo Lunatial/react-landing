@@ -1,8 +1,11 @@
 import {useState} from 'react'
 import {memo} from 'react'
 
+import {AnimatePresence, motion} from "framer-motion"
+
 import {Box} from './Box'
 import {Dustbin} from './Dustbin'
+import {FakeDustbin} from './FakeDustbin'
 
 const initialContents = [
     {
@@ -51,8 +54,14 @@ export const Container = memo(() => {
         )
     }
 
+    const variants = {
+        visible: {opacity: 1, y: 0},
+        hidden: {opacity: 0, y: -50},
+        exit: {opacity: 0, x: 150},
+    }
+
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto overflow-hidden">
             <p className="text-xl text-center text-black font-bold">
                 {
                     currentContent
@@ -73,13 +82,62 @@ export const Container = memo(() => {
                         })
                     }
                 </div>
-                <div className="flex" style={{overflow: 'hidden', clear: 'both'}}>
+                <div className="flex flex-col" style={{overflow: 'hidden', clear: 'both'}}>
                     <Dustbin
+                        currentContent={currentContent}
+                        removeFromContent={removeFromContent}
+                    />
+                    <FakeDustbin
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
                     />
                 </div>
             </div>
+            <AnimatePresence>
+                {currentContent && (
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={variants}>
+                        <p className="text-2xl italic, text-center my-2">{currentContent.contentText}</p>
+                        <div className="grid grid-cols-2 gap-6">
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
+                                enim
+                                facere
+                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
+                                quo
+                                sint
+                                tempora unde voluptate.
+                            </div>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
+                                enim
+                                facere
+                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
+                                quo
+                                sint
+                                tempora unde voluptate.
+                            </div>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
+                                enim
+                                facere
+                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
+                                quo
+                                sint
+                                tempora unde voluptate.
+                            </div>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
+                                enim
+                                facere
+                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
+                                quo
+                                sint
+                                tempora unde voluptate.
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 })

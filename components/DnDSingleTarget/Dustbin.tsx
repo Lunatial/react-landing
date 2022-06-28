@@ -24,14 +24,17 @@ type DustbinProps = {
 }
 
 export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
-    const [{canDrop, isOver}, drop] = useDrop(() => ({
-        accept: ItemTypes.BOX,
-        drop: () => ({name: 'konténer'}),
-        collect: (monitor) => ({
-            isOver: monitor.isOver(),
-            canDrop: monitor.canDrop(),
-        }),
-    }))
+    const [{canDrop, isOver}, drop] = useDrop(() => {
+        return {
+            accept: ItemTypes.BOX,
+            drop: () => ({name: 'konténer'}),
+            canDrop: () => !currentContent?.id,
+            collect: (monitor) => ({
+                isOver: !!monitor.isOver(),
+                canDrop: !!monitor.canDrop()
+            })
+        }
+    }, [currentContent])
 
     const isActive = canDrop && isOver
     let backgroundColor
@@ -39,12 +42,14 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
         backgroundColor = 'darkgreen'
     } else if (canDrop) {
         backgroundColor = 'darkkhaki'
+    } else if (isOver && !canDrop) {
+        backgroundColor = 'red'
     }
 
     return (
         <div
             ref={drop}
-            className="bg-blue-500 shadow-lg rounded-lg"
+            className="bg-blue-500 shadow-lg rounded-lg transition-all"
             style={{...style, backgroundColor}}
             data-testid="dustbin">
             {
@@ -59,7 +64,7 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
                     <div
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex justify-center items-center">
                         <span
-                            className="cursor-pointer p-4 hover:text-yellow-400"
+                            className="cursor-pointer p-4 hover:text-black hover:scale-150 transition duration-300 ease-in-out"
                             onClick={() => {
                                 removeFromContent({
                                     id: currentContent.id,
