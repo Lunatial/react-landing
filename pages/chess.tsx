@@ -2,8 +2,7 @@ import React, {ReactNode, useState} from "react"
 
 import Link from 'next/link'
 
-import {DndProvider, useDrag, useDrop} from 'react-dnd'
-import {HTML5Backend} from 'react-dnd-html5-backend'
+import {useDrag, useDrop} from 'react-dnd'
 
 import NextSeo from "../components/NextSeo"
 
@@ -182,34 +181,17 @@ function Board() {
 const ChessPage = () => {
 
     return (
-        <DndProvider backend={HTML5Backend}>
+        <>
             <NextSeo
                 title="React-landing"
                 description={`React-landing-description`}
             />
 
             <h1>ChessPage</h1>
-            <ul style={{display: 'flex', flexDirection: 'row', gap: '1rem'}}>
-                <li>
-                    <Link href="/">
-                        <a>Home</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/chess">
-                        <a>chess</a>
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/dnd">
-                        <a>dnd</a>
-                    </Link>
-                </li>
-            </ul>
 
             <Board/>
 
-        </DndProvider>
+        </>
     )
 }
 
