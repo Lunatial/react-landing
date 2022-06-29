@@ -1,4 +1,5 @@
-import NextSeo from "../components/NextSeo";
+import NextSeo from "../components/NextSeo"
+import {IndustrialSolutionContainer} from "../components/IndustrialSolution"
 
 
 const IndustrialSolution = () => {
@@ -10,8 +11,9 @@ const IndustrialSolution = () => {
             />
 
             <h1 className="text-center">Ipari megoldások</h1>
+            <IndustrialSolutionContainer/>
         </div>
-    );
-};
+    )
+}
 
-export default IndustrialSolution;
+export default IndustrialSolution

@@ -1,7 +1,7 @@
 import {ReactNode} from 'react'
 
+import Navigation from "./Navigation"
 import Footer from "./Footer"
-import DnDNavigation from "../DnDNavigation"
 
 type LayoutProps = {
     children: ReactNode
@@ -10,12 +10,11 @@ type LayoutProps = {
 export default function Layout({children}: LayoutProps) {
     return (
         <div className="flex flex-col h-screen font-Montserrat">
-            <DnDNavigation/>
+            <Navigation/>
             <main className="flex flex-grow flex-col">
                 {children}
             </main>
             <Footer/>
-            {/*<div>footer</div>*/}
         </div>
     )
 }

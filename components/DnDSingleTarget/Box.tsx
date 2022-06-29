@@ -1,7 +1,7 @@
 import type {CSSProperties, FC} from 'react'
 import {useDrag} from 'react-dnd'
 
-import {ItemTypes} from './ItemTypes'
+import {ItemTypes} from '../../utils/ItemTypes'
 import {pocketContentType} from "./Container"
 
 const style: CSSProperties = {

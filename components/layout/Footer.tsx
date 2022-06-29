@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import {routes} from "../DnDNavigation"
+import {routes} from "./Navigation"
 // // @ts-ignore
 // import logo from '../../public/images/logo.png?webp'
 // // @ts-ignore

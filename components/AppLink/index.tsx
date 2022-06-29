@@ -1,19 +1,28 @@
-import Link from "next/link";
+import Link from "next/link"
+import {useRouter} from 'next/router'
 
 type AppLinkProps = {
-    href: string,
-    text: string,
-    underline: boolean,
+    path: string
+    displayName: string
 }
 
+const commonClasses = "text-lg text-black font-medium hover:text-indigo-600 transition-all"
+const activeClasses = "text-indigo-400"
 const AppLink = (props: AppLinkProps) => {
-    const {href, text, underline} = props
+    const {path, displayName} = props
+    const router = useRouter()
+
+    const activeClassName = router.asPath === path
+        ? `${commonClasses} ${activeClasses}`
+        : commonClasses
     return (
-        <Link href={href}>
-            <a className={underline ? "underline" : "no-underline hover:underline"}>
-                {text}
+        <span className={activeClassName}>
+        <Link href={path}>
+            <a>
+                {displayName}
             </a>
         </Link>
+            </span>
     );
 };
 

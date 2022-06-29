@@ -3,9 +3,8 @@ import {memo} from 'react'
 
 import {AnimatePresence, motion} from "framer-motion"
 
-import {Box} from './Box'
-import {Dustbin} from './Dustbin'
-import {FakeDustbin} from './FakeDustbin'
+import {Box} from '../DnDSingleTarget/Box'
+import {Dustbin} from '../DnDSingleTarget/Dustbin'
 
 const initialContents = [
     {
@@ -32,7 +31,7 @@ const initialContents = [
 
 export type pocketContentType = { id: number, contentText: string }
 
-export const Container = memo(() => {
+export const IndustrialSolutionContainer = memo(() => {
     const [currentContent, setContent] = useState<pocketContentType>()
     const [pocketContent, setPocketContent] = useState<pocketContentType[]>(initialContents)
 
@@ -84,10 +83,6 @@ export const Container = memo(() => {
                 </div>
                 <div className="flex flex-col" style={{overflow: 'hidden', clear: 'both'}}>
                     <Dustbin
-                        currentContent={currentContent}
-                        removeFromContent={removeFromContent}
-                    />
-                    <FakeDustbin
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
                     />

@@ -3,7 +3,7 @@ import {useDrop} from 'react-dnd'
 
 
 import {pocketContentType} from "./Container"
-import {ItemTypes} from './ItemTypes'
+import {ItemTypes} from '../../utils/ItemTypes'
 
 const style: CSSProperties = {
     height: '16rem',
