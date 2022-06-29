@@ -38,7 +38,7 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
         }
     }, [currentContent])
 
-    const notify = () => toast.success("Sikeres eltávolítás")
+    const notify = (text: string) => toast.success(text)
 
     const isActive = canDrop && isOver
     let backgroundColor
@@ -74,7 +74,7 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
                                     id: currentContent.id,
                                     contentText: currentContent.contentText
                                 })
-                                notify()
+                                notify("Sikeres eltávolítás")
                             }}>
                             <TrashIcon className="h-10 w-10"/>
                         </span>
