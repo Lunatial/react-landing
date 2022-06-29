@@ -5,7 +5,7 @@ import {ItemTypes} from '../../utils/ItemTypes'
 import {PocketContentType} from "./index"
 
 export interface BoxProps {
-    setContent: (arg0: PocketContentType[]) => void
+    setContent: (arg0: PocketContentType[]) => PocketContentType[]
     handlePocketContent: (id: number) => void
     singlePocketContent: PocketContentType
 }
@@ -19,26 +19,30 @@ export const IndustrialScenarios: FC<BoxProps> = function Box({
                                                                   handlePocketContent,
                                                                   singlePocketContent
                                                               }) {
-    const [{isDragging}, drag] = useDrag(() => ({
-        type: ItemTypes.INDUSTRIAL_CANVAS,
-        item: singlePocketContent.contentText,
-        end: (item, monitor) => {
-            const dropResult = monitor.getDropResult<DropResult>()
-            if (item && dropResult) {
-                setContent(prev => {
-                    return [
-                        ...prev,
-                        singlePocketContent
-                    ]
-                })
-                handlePocketContent(singlePocketContent.id,)
-            }
-        },
-        collect: (monitor) => ({
-            isDragging: monitor.isDragging(),
-            handlerId: monitor.getHandlerId(),
-        }),
-    }), [singlePocketContent])
+    const [{isDragging}, drag] = useDrag(() => {
+        return ({
+            type: ItemTypes.INDUSTRIAL_CANVAS,
+            item: singlePocketContent.contentText,
+            end: (item, monitor) => {
+                const dropResult = monitor.getDropResult<DropResult>()
+                if (item && dropResult) {
+
+                    // @ts-ignore
+                    setContent((prev) => {
+                        return [
+                            ...prev,
+                            singlePocketContent
+                        ]
+                    })
+                    handlePocketContent(singlePocketContent.id,)
+                }
+            },
+            collect: (monitor) => ({
+                isDragging: monitor.isDragging(),
+                handlerId: monitor.getHandlerId(),
+            }),
+        });
+    }, [singlePocketContent])
 
     const Icon = singlePocketContent.icon
 
