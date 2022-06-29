@@ -1,3 +1,4 @@
 export const ItemTypes = {
-    BOX: 'box',
+    BOX: "box",
+    INDUSTRIAL_CANVAS: "INDUSTRIAL_CANVAS"
 }

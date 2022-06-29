@@ -13,11 +13,15 @@ export const routes = [
         "path": "/chess",
         "displayName": "Sakk"
     },
+    {
+        "path": "/connect",
+        "displayName": "Kapcsolat"
+    },
 ]
 
 const Navigation = () => {
     return (
-        <ul className="flex flex-row gap-4 p-2">
+        <ul className="flex flex-row gap-4 p-2 uppercase">
             {
                 routes.map(route => {
                     return <li key={route.path}>

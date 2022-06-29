@@ -56,7 +56,7 @@ const Footer = () => {
                         img
                     </p>
                     <p className="text-lg my-2">
-                        INSTAGRAM
+                        LINKEDIN
                     </p>
                 </div>
                 <div className="basis-1/2 lg:basis-1/5 flex flex-col text-center lg:text-left">
@@ -72,7 +72,7 @@ const Footer = () => {
                     }
                 </div>
             </div>
-            <p className="text-center mt-20 uppercase">COPYRIGHT © | Skyline-Computer kft. MINDEN JOG FENNTARTVA. | JOGI
+            <p className="text-center mt-12 uppercase">COPYRIGHT © | Skyline-Computer kft. MINDEN JOG FENNTARTVA. | JOGI
                 NYILATKOZAT |
                 IMPRESSZUM</p>
         </footer>

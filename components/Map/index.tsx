@@ -15,7 +15,7 @@ type mapProps = {
 
 const Map = ({mapContainerStyle = {height: 400, width: "100%"}}: mapProps) => {
     const [map, setMap] = useState(null)
-    const center = [47.49116945807231, 19.023050494754674]
+    const center = [46.9043031888235, 19.693496786506692]
 
     const flyTo = () => {
         if (map) {
@@ -32,26 +32,26 @@ const Map = ({mapContainerStyle = {height: 400, width: "100%"}}: mapProps) => {
     return (
         <>
             <p className="text-lg text-center my-5 cursor-pointer" onClick={flyTo}>
-                <span className="font-medium">Helyszín: </span>
-                BUDAPEST 1123, Alkotás utca 53. GPS: 47.49116945807231, 19.023050494754674
+                <span className="font-medium uppercase">Helyszín: </span>
+                Kecskemét 6000, Trombita utca 2. GPS: 46.9043031888235, 19.693496786506692
             </p>
             <div className="drop-shadow-lg">
                 <MapContainer
                     fullscreenControl={true}
                     center={center}
                     zoom={15}
-                    maxZoom={16}
+                    // maxZoom={16}
                     scrollWheelZoom={false}
                     whenCreated={setMap}
                     style={mapContainerStyle}>
                     <TileLayer
                         // @ts-ignore
-                        // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?webp"
+                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?webp"
 
                         //Esri.WorldGreyCanvas
-                        attribution='Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
-                        url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+                        // attribution='Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
+                        // url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
 
                         //CartoDB.Pos
                         // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -62,8 +62,8 @@ const Map = ({mapContainerStyle = {height: 400, width: "100%"}}: mapProps) => {
                         icon={ICON}
                         position={center}>
                         <Popup>
-                            <p className="font-medium">Lenoa COFFEE&SHOP</p>
-                            <p>BUDAPEST, ALKOTÁS U. 53, 1123</p>
+                            <p className="font-medium">Skyline-Computer Kft.</p>
+                            <p>Kecskemét 6000, Trombita utca 2.</p>
                         </Popup>
                     </Marker>
                 </MapContainer>
