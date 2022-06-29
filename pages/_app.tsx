@@ -2,11 +2,14 @@ import Head from 'next/head'
 import {AppProps} from 'next/app'
 import NextNProgress from "nextjs-progressbar"
 
+import {ToastContainer} from 'react-toastify'
 import {motion, AnimatePresence} from "framer-motion"
 import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from "react-dnd-html5-backend"
 
 import Layout from '../components/layout/Layout'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 import '../styles/globals.css'
 
@@ -38,6 +41,16 @@ function MyApp({Component, pageProps, router}: AppProps) {
                     <NextNProgress color="rgb(59, 130, 246)"/>
                     <Layout>
                         <Component {...pageProps} />
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover/>
                     </Layout>
                 </motion.div>
             </AnimatePresence>

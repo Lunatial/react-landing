@@ -1,10 +1,8 @@
 import {useState} from 'react'
 import {memo} from 'react'
 
-import {AnimatePresence, motion} from "framer-motion"
-
-import {Box} from '../DnDSingleTarget/Box'
-import {Dustbin} from '../DnDSingleTarget/Dustbin'
+import {Box} from './Box'
+import {Dustbin} from './Dustbin'
 
 const initialContents = [
     {
@@ -53,12 +51,6 @@ export const IndustrialSolutionContainer = memo(() => {
         )
     }
 
-    const variants = {
-        visible: {opacity: 1, y: 0},
-        hidden: {opacity: 0, y: -50},
-        exit: {opacity: 0, x: 150},
-    }
-
     return (
         <div className="container mx-auto overflow-hidden">
             <p className="text-xl text-center text-black font-bold">
@@ -88,83 +80,6 @@ export const IndustrialSolutionContainer = memo(() => {
                     />
                 </div>
             </div>
-            <AnimatePresence>
-                {currentContent && (
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={variants}>
-                        <p className="text-2xl italic, text-center my-4">{currentContent.contentText}</p>
-                        <div className="grid grid-cols-2 gap-10 my-4">
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dolores, ducimus
-                                enim
-                                facere
-                                impedit ipsa itaque laborum laudantium, libero nam pariatur perspiciatis quae quidem,
-                                quo
-                                sint
-                                tempora unde voluptate.
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </div>
     )
 })

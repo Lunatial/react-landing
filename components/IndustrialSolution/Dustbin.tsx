@@ -1,8 +1,6 @@
 import type {CSSProperties} from 'react'
-import {toast} from 'react-toastify'
 import {useDrop} from 'react-dnd'
 
-import {TrashIcon} from '@heroicons/react/solid'
 
 import {pocketContentType} from "./Container"
 import {ItemTypes} from '../../utils/ItemTypes'
@@ -38,8 +36,6 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
         }
     }, [currentContent])
 
-    const notify = () => toast.success("Sikeres eltávolítás")
-
     const isActive = canDrop && isOver
     let backgroundColor
     if (isActive) {
@@ -74,9 +70,8 @@ export const Dustbin = ({currentContent, removeFromContent}: DustbinProps) => {
                                     id: currentContent.id,
                                     contentText: currentContent.contentText
                                 })
-                                notify()
                             }}>
-                            <TrashIcon className="h-10 w-10"/>
+                            x
                         </span>
                     </div>
                 )
