@@ -35,7 +35,7 @@ function MyApp({Component, pageProps, router}: AppProps) {
                         <meta name="theme-color" content="#FFFFFF"/>
                         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
                     </Head>
-                    <NextNProgress color="#E7E8E6"/>
+                    <NextNProgress color="rgb(59, 130, 246)"/>
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>

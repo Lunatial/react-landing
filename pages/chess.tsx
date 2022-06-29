@@ -166,9 +166,10 @@ function Board() {
     console.log(knightPosition)
     return (
         <div
+            className="mx-auto shadow-xl my-8"
             style={{
-                width: '100%',
-                height: '100%',
+                width: '800px',
+                height: '800px',
                 display: 'flex',
                 flexWrap: 'wrap'
             }}
@@ -187,7 +188,7 @@ const ChessPage = () => {
                 description={`React-landing-description`}
             />
 
-            <h1>ChessPage</h1>
+            <h1 className="text-center">ChessPage</h1>
 
             <Board/>
 
