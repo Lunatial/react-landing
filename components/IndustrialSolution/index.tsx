@@ -42,7 +42,7 @@ export type PocketContentType = {
     icon: HeroIcon
 }
 
-export const IndustrialSolutionContainer = memo(() => {
+export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
     const [currentContent, setContent] = useState<PocketContentType[]>([])
     const [pocketContent, setPocketContent] = useState<PocketContentType[]>(initialContents)
 
