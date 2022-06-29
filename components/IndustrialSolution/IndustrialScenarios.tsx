@@ -1,11 +1,11 @@
-import type {FC} from 'react'
+import type {FC, Dispatch, SetStateAction} from 'react'
 import {useDrag} from 'react-dnd'
 
 import {ItemTypes} from '../../utils/ItemTypes'
 import {PocketContentType} from "./index"
 
 export interface BoxProps {
-    setContent: (arg0: PocketContentType[]) => PocketContentType[]
+    setContent: Dispatch<SetStateAction<PocketContentType[]>>
     handlePocketContent: (id: number) => void
     singlePocketContent: PocketContentType
 }
@@ -27,7 +27,6 @@ export const IndustrialScenarios: FC<BoxProps> = function Box({
                 const dropResult = monitor.getDropResult<DropResult>()
                 if (item && dropResult) {
 
-                    // @ts-ignore
                     setContent((prev) => {
                         return [
                             ...prev,
