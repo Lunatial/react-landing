@@ -1,8 +1,9 @@
-import type {FC, Dispatch, SetStateAction} from 'react'
+import type {Dispatch, SetStateAction} from 'react'
 import {useDrag} from 'react-dnd'
 
 import {ItemTypes} from '../../utils/ItemTypes'
 import {PocketContentType} from "./index"
+import {useModal} from "../../contexts/ModalPorvider"
 
 export interface BoxProps {
     setContent: Dispatch<SetStateAction<PocketContentType[]>>
@@ -14,11 +15,12 @@ interface DropResult {
     name: string
 }
 
-export const IndustrialScenarios: FC<BoxProps> = function Box({
-                                                                  setContent,
-                                                                  handlePocketContent,
-                                                                  singlePocketContent
-                                                              }) {
+export const IndustrialScenarios = ({
+                                        setContent,
+                                        handlePocketContent,
+                                        singlePocketContent
+                                    }: BoxProps) => {
+    const {openModal,} = useModal()
     const [{isDragging}, drag] = useDrag(() => {
         return ({
             type: ItemTypes.INDUSTRIAL_CANVAS,
@@ -49,8 +51,9 @@ export const IndustrialScenarios: FC<BoxProps> = function Box({
     return (
         <div
             ref={drag}
-            className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4"
+            className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4 hover:scale-105 focus:scale-95 transition-all"
             style={{opacity}}
+            onClick={() => openModal()}
         >
             <div className="basis-3/4">
                 <div className="m-2">

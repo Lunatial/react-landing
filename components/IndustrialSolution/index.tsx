@@ -77,7 +77,7 @@ export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
                 }
             </p>
             <div className="flex flex-row justify-between mt-14">
-                <div className="flex flex-col basis-1/3" style={{overflow: 'hidden', clear: 'both'}}>
+                <div className="flex flex-col basis-1/3">
                     {
                         pocketContent.map(singlePocketContent => {
                             return <IndustrialScenarios

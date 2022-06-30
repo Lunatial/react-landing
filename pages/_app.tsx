@@ -8,6 +8,7 @@ import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from "react-dnd-html5-backend"
 
 import Layout from '../components/layout/Layout'
+import {ModalProvider} from '../contexts/ModalPorvider'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -40,7 +41,9 @@ function MyApp({Component, pageProps, router}: AppProps) {
                     </Head>
                     <NextNProgress color="rgb(59, 130, 246)"/>
                     <Layout>
-                        <Component {...pageProps} />
+                        <ModalProvider>
+                            <Component {...pageProps} />
+                        </ModalProvider>
                         <ToastContainer
                             position="top-right"
                             autoClose={5000}
