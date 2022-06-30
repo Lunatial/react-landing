@@ -4,33 +4,33 @@ import {memo} from 'react'
 import {IndustrialScenarios} from './IndustrialScenarios'
 import {IndustrialCanvas} from './IndustrialCanvas'
 
-import {VideoCameraIcon, ServerIcon, TerminalIcon, ShieldCheckIcon, PrinterIcon, PlayIcon} from "@heroicons/react/solid"
+import {VideoCameraIcon, ServerIcon, TerminalIcon, ShieldCheckIcon, ChartBarIcon, PlayIcon} from "@heroicons/react/solid"
 
 const initialContents = [
     {
         id: 1,
-        contentText: "Zseb 1 tartalma",
+        contentText: "Cognex",
         icon: VideoCameraIcon
     },
     {
         id: 2,
-        contentText: "Zseb 2 tartalma",
+        contentText: "DimHob",
         icon: ServerIcon
     },
     {
         id: 3,
-        contentText: "Zseb 3 tartalma",
+        contentText: "DimInt",
         icon: TerminalIcon
     },
     {
         id: 4,
-        contentText: "Zseb 4 tartalma",
+        contentText: "DimPong",
         icon: ShieldCheckIcon
     },
     {
         id: 5,
-        contentText: "Zseb 5 tartalma",
-        icon: PrinterIcon
+        contentText: "DimCsoki",
+        icon: ChartBarIcon
     },
 ]
 
@@ -45,6 +45,7 @@ export type PocketContentType = {
 export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
     const [currentContent, setContent] = useState<PocketContentType[]>([])
     const [pocketContent, setPocketContent] = useState<PocketContentType[]>(initialContents)
+    const [startAnimation, setStartAnimation] = useState<boolean>(false)
 
     const handlePocketContent = (id: number) => {
         setPocketContent(prev => {
@@ -76,7 +77,7 @@ export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
                         : "üres"
                 }
             </p>
-            <div className="flex flex-row justify-between mt-14">
+            <div className="flex flex-col lg:flex-row justify-between mt-14">
                 <div className="flex flex-col basis-1/3">
                     {
                         pocketContent.map(singlePocketContent => {
@@ -92,12 +93,20 @@ export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
                     <IndustrialCanvas
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
+                        startAnimation={startAnimation}
                     />
                     <div className="flex justify-end">
                         <div
-                            className={`shadow-lg rounded-lg ${currentContent.length > 0 ? "bg-fuchsia-400" : "bg-gray-200"} p-2 mt-4`}>
+                            className={`shadow-lg rounded-lg ${currentContent.length > 0 ? "bg-fuchsia-400" : "bg-gray-200"} active:bg-fuchsia-300 p-2 mt-4`}>
                             <PlayIcon
-                                className={`text-white h-20 w-20 ${currentContent.length > 0 ? "cursor-pointer" : "cursor-normal"}`}/>
+                                className={`text-white h-20 w-20 ${currentContent.length > 0 ? "cursor-pointer" : "cursor-normal"}`}
+                                onClick={() => {
+                                    setStartAnimation(true)
+                                    setTimeout(() => {
+                                        setStartAnimation(false)
+                                    }, currentContent.length * 300)
+                                }}
+                            />
                         </div>
                     </div>
                 </div>

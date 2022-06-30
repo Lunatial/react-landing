@@ -1,4 +1,4 @@
-import {ReactElement} from "react"
+import {ReactElement, useEffect} from "react"
 import {motion, AnimatePresence} from "framer-motion"
 
 interface Props {
@@ -15,7 +15,7 @@ const backdropVariant = {
     visible: {
         opacity: 1,
         transition: {
-            duration: 1,
+            duration: 0.8,
             delayChildren: 0.2,
         },
     },
@@ -41,6 +41,19 @@ const AppModal = (props: Props) => {
         ModalContent,
         modalTitle
     } = props
+
+    useEffect(() => {
+        const handleEsc = (event: KeyboardEvent) => {
+            if (event.code === "Escape") {
+                setIsOpen(false)
+            }
+        }
+        window.addEventListener('keydown', handleEsc)
+
+        return () => {
+            window.removeEventListener('keydown', handleEsc)
+        }
+    }, [])
 
     return (
         <AnimatePresence>
