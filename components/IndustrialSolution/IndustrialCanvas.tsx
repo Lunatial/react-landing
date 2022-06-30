@@ -34,7 +34,7 @@ export const IndustrialCanvas = ({currentContent, removeFromContent, startAnimat
                 scale: [1, 1.2, 1.3, 1.2, 1],
                 rotate: [0, 0, 270, 270, 0],
                 borderRadius: ["20%", "20%", "30%", "50%", "20%"],
-                transition: {delay: i * 0.3}
+                transition: {delay: i * 0.3, duration: 3},
             }))
         }
     }, [controls, startAnimation])
