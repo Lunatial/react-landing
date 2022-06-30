@@ -82,12 +82,12 @@ export const Container = memo(function DnDExample() {
                         })
                     }
                 </div>
-                <div className="flex flex-col" style={{overflow: 'hidden', clear: 'both'}}>
-                    <Dustbin
+                <div className="flex flex-row justify-between" style={{overflow: 'hidden', clear: 'both'}}>
+                    <FakeDustbin
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
                     />
-                    <FakeDustbin
+                    <Dustbin
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
                     />

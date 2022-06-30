@@ -28,7 +28,6 @@ export const IndustrialScenarios = ({
             end: (item, monitor) => {
                 const dropResult = monitor.getDropResult<DropResult>()
                 if (item && dropResult) {
-
                     setContent((prev) => {
                         return [
                             ...prev,
@@ -53,7 +52,12 @@ export const IndustrialScenarios = ({
             ref={drag}
             className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4 hover:scale-105 active:scale-95 transition-all"
             style={{opacity}}
-            onClick={() => openModal({modalTitle: singlePocketContent.contentText, ContentComponent: <div>random valami content</div>})}
+            onClick={() => openModal({
+                modalTitle: singlePocketContent.contentText, ContentComponent: <div className="flex flex-row gap-4">
+                    <p>random valami content</p>
+                    <Icon className="h-10 w-10"/>
+                </div>
+            })}
         >
             <div className="basis-3/4">
                 <div className="m-2">

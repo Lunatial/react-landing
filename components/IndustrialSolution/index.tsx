@@ -4,7 +4,7 @@ import {memo} from 'react'
 import {IndustrialScenarios} from './IndustrialScenarios'
 import {IndustrialCanvas} from './IndustrialCanvas'
 
-import {VideoCameraIcon, ServerIcon, TerminalIcon, ShieldCheckIcon, PrinterIcon} from "@heroicons/react/solid"
+import {VideoCameraIcon, ServerIcon, TerminalIcon, ShieldCheckIcon, PrinterIcon, PlayIcon} from "@heroicons/react/solid"
 
 const initialContents = [
     {
@@ -68,10 +68,10 @@ export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
     }
 
     return (
-        <div className="container mx-auto overflow-hidden">
+        <div className="container mx-auto my-4 overflow-hidden">
             <p className="text-xl text-center text-black font-bold">
                 {
-                    currentContent
+                    currentContent.length > 0
                         ? `${currentContent.length} elem van belehelyezve`
                         : "üres"
                 }
@@ -93,6 +93,13 @@ export const IndustrialSolutionContainer = memo(function IndustrialSolution() {
                         currentContent={currentContent}
                         removeFromContent={removeFromContent}
                     />
+                    <div className="flex justify-end">
+                        <div
+                            className={`shadow-lg rounded-lg ${currentContent.length > 0 ? "bg-fuchsia-400" : "bg-gray-200"} p-2 mt-4`}>
+                            <PlayIcon
+                                className={`text-white h-20 w-20 ${currentContent.length > 0 ? "cursor-pointer" : "cursor-normal"}`}/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
