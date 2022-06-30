@@ -1,11 +1,11 @@
-import {FC, ReactNode} from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import {ReactElement} from "react"
+import {motion, AnimatePresence} from "framer-motion"
 
 interface Props {
     isOpen: boolean
     setIsOpen: (state: boolean) => void
-    // ModalContent: ReactNode
-    // modalTitle: string
+    ModalContent: ReactElement<any, any>
+    modalTitle: string
 }
 
 const backdropVariant = {
@@ -19,7 +19,7 @@ const backdropVariant = {
             delayChildren: 0.2,
         },
     },
-};
+}
 
 const modalVariant = {
     hidden: {
@@ -32,31 +32,35 @@ const modalVariant = {
             stiffness: 70,
         },
     },
-};
+}
 
-const AppModal: FC<Props> = ({
-                                 isOpen,
-                                 setIsOpen,
-                                 // ModalContent,
-                                 // modalTitle
-}) => {
+const AppModal = (props: Props) => {
+    const {
+        isOpen,
+        setIsOpen,
+        ModalContent,
+        modalTitle
+    } = props
 
     return (
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="modal-backdrop"
+                    className="bg-slate-900/90 w-full h-full grid place-items-center absolute top-0 left-0"
                     variants={backdropVariant}
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
                 >
-                    <motion.div className="modal-container" variants={modalVariant}>
-                        <h1>Modal Title ide</h1>
-                        {/*<ModalContent />*/}
-                        content..
+                    <motion.div
+                        className="w-100 min-w-140 h-140 bg-slate-50 rounded-lg flex flex-col shadow-lg p-12 items-center relative"
+                        variants={modalVariant}>
+                        <h1>{modalTitle}</h1>
+                        {
+                            ModalContent
+                        }
                         <motion.div
-                            whileHover={{ rotate: 45 }}
+                            whileHover={{rotate: 45}}
                             className="close"
                             onClick={() => setIsOpen(false)}
                         >
@@ -67,7 +71,7 @@ const AppModal: FC<Props> = ({
                 </motion.div>
             )}
         </AnimatePresence>
-    );
-};
+    )
+}
 
-export default AppModal;
+export default AppModal

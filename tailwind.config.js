@@ -18,6 +18,9 @@ module.exports = {
       width: {
         140: '40rem',
       },
+      minWidth: {
+        140: '40rem',
+      },
       fontFamily: {
         VinSansPro: ["Vin Sans Pro", ...defaultTheme.fontFamily.sans],
         Montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],

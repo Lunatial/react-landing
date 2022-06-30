@@ -3,7 +3,7 @@ import {useDrag} from 'react-dnd'
 
 import {ItemTypes} from '../../utils/ItemTypes'
 import {PocketContentType} from "./index"
-import {useModal} from "../../contexts/ModalPorvider"
+import {useModal} from "../../contexts/ModalProvider"
 
 export interface BoxProps {
     setContent: Dispatch<SetStateAction<PocketContentType[]>>
@@ -51,9 +51,9 @@ export const IndustrialScenarios = ({
     return (
         <div
             ref={drag}
-            className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4 hover:scale-105 focus:scale-95 transition-all"
+            className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4 hover:scale-105 active:scale-95 transition-all"
             style={{opacity}}
-            onClick={() => openModal()}
+            onClick={() => openModal({modalTitle: singlePocketContent.contentText, ContentComponent: <div>random valami content</div>})}
         >
             <div className="basis-3/4">
                 <div className="m-2">

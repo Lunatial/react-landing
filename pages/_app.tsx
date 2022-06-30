@@ -8,7 +8,7 @@ import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from "react-dnd-html5-backend"
 
 import Layout from '../components/layout/Layout'
-import {ModalProvider} from '../contexts/ModalPorvider'
+import {ModalProvider} from '../contexts/ModalProvider'
 
 import 'react-toastify/dist/ReactToastify.css'
 
