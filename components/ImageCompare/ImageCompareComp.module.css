@@ -4,6 +4,7 @@
       It has been added for the sake of smoothness.
     */
     transition: box-shadow 200ms ease-in-out;
+    border-radius: 0.75rem;
 }
 
 .sliderExampleFocus:active {

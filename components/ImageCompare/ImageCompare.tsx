@@ -1,5 +1,7 @@
 import {ImgComparisonSlider} from '@img-comparison-slider/react'
 
+import {motion} from "framer-motion"
+
 // @ts-ignore
 import pic1 from '../../public/4220509.jpg?webp'
 // @ts-ignore
@@ -9,12 +11,19 @@ import styles from './ImageCompareComp.module.css'
 
 const ImageCompareComp = () => {
     return (
-        <div className="mx-auto container my-10">
+        <motion.div
+            className="mx-auto container my-10"
+            whileHover={{
+                scale: 0.95,
+                transition: {duration: 1},
+            }}
+            // whileTap={{scale: 1}}
+        >
             <ImgComparisonSlider className={styles.sliderExampleFocus}>
                 <img slot="first" src={pic1} alt="pic1"/>
                 <img slot="second" src={pic2} alt="wor"/>
             </ImgComparisonSlider>
-        </div>
+        </motion.div>
     )
 }
 

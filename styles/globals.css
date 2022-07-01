@@ -65,6 +65,11 @@
 }
 /*MODAL*/
 
+img-comparison-slider {
+    --divider-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    --default-handle-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
 .handle-container,
 .handle {
     cursor: pointer !important;
