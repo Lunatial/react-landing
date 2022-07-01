@@ -64,6 +64,12 @@
     }
 }
 /*MODAL*/
+
+.handle-container,
+.handle {
+    cursor: pointer !important;
+}
+
 /*missing alt attribute*/
 img:not([alt]){
     outline: 5px dashed red;

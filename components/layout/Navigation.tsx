@@ -10,6 +10,10 @@ export const routes = [
         "displayName": "Ipari megoldások"
     },
     {
+        "path": "/image-compare",
+        "displayName": "Kép összehasonlítás"
+    },
+    {
         "path": "/chess",
         "displayName": "Sakk"
     },
