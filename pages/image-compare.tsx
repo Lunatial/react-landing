@@ -1,11 +1,7 @@
 import AppImageCompareComp from "../components/ImageCompare"
 
 const ImageCompare = () => {
-    return (
-        <div>
-            <AppImageCompareComp/>
-        </div>
-    )
+    return <AppImageCompareComp/>
 }
 
 export default ImageCompare

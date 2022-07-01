@@ -53,9 +53,10 @@ export const IndustrialScenarios = ({
             className="flex flex-row cursor-move shadow-lg rounded-xl m-2 p-4 hover:scale-105 active:scale-95 transition-all"
             style={{opacity}}
             onClick={() => openModal({
-                modalTitle: singlePocketContent.contentText, ContentComponent: <div className="flex flex-row gap-4">
-                    <p>random valami content</p>
+                modalTitle: singlePocketContent.contentText,
+                ContentComponent: <div className="flex flex-col items-center gap-4">
                     <Icon className="h-10 w-10"/>
+                    <p className="text-lg">random valami content</p>
                 </div>
             })}
         >

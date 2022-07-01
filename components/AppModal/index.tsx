@@ -68,10 +68,12 @@ const AppModal = (props: Props) => {
                     <motion.div
                         className="w-100 min-w-140 h-140 bg-slate-50 rounded-lg flex flex-col shadow-lg p-12 items-center relative"
                         variants={modalVariant}>
-                        <h1>{modalTitle}</h1>
-                        {
-                            ModalContent
-                        }
+                        <h1 className="text-3xl text-center">{modalTitle}</h1>
+                        <div className="flex items-center flex-grow">
+                            {
+                                ModalContent
+                            }
+                        </div>
                         <motion.div
                             whileHover={{rotate: 45}}
                             className="close"
