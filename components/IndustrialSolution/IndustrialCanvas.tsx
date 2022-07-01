@@ -27,14 +27,17 @@ export const IndustrialCanvas = ({currentContent, removeFromContent, startAnimat
     }, [currentContent])
 
     useEffect(() => {
-        if(startAnimation) {
+        if (startAnimation) {
             controls.start((i) => ({
                 x: [10, 40, 50, 40, 10],
                 y: [50, 80, 100, 110, 120],
                 scale: [1, 1.2, 1.3, 1.2, 1],
                 rotate: [0, 0, 270, 270, 0],
                 borderRadius: ["20%", "20%", "30%", "50%", "20%"],
-                transition: {delay: i * 0.3, duration: 3},
+                transition: {
+                    delay: i * 0.3,
+                    duration: 3,
+                },
             }))
         }
     }, [controls, startAnimation])
