@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import {routes} from "./Navigation"
+// import {routes} from "./Navigation"
 // // @ts-ignore
 // import logo from '../../public/images/logo.png?webp'
 // // @ts-ignore
@@ -63,13 +63,13 @@ const Footer = () => {
                     <p className="text-4xl font-medium my-4 font-VinSansPro">
                         SITEMAP
                     </p>
-                    {
-                        routes.map(route => {
-                            return <Link key={route.path} href={route.path} passHref>
-                                <a className="text-lg my-2 text-black hover:text-gray-400">{route.displayName}</a>
-                            </Link>
-                        })
-                    }
+                    {/*{*/}
+                    {/*    routes.map(route => {*/}
+                    {/*        return <Link key={route.path} href={route.path} passHref>*/}
+                    {/*            <a className="text-lg my-2 text-black hover:text-gray-400">{route.displayName}</a>*/}
+                    {/*        </Link>*/}
+                    {/*    })*/}
+                    {/*}*/}
                 </div>
             </div>
             <p className="text-center mt-12 uppercase">COPYRIGHT © | Skyline-Computer kft. MINDEN JOG FENNTARTVA. | JOGI

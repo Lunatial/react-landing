@@ -1,39 +1,64 @@
-import AppLink from "../AppLink"
+import {useIntl} from "react-intl"
 
-export const routes = [
-    {
-        "path": "/",
-        "displayName": "Kezdőlap"
-    },
-    {
-        "path": "/industrial-solution",
-        "displayName": "Ipari megoldások"
-    },
-    {
-        "path": "/image-compare",
-        "displayName": "Kép összehasonlítás"
-    },
-    {
-        "path": "/chess",
-        "displayName": "Sakk"
-    },
-    {
-        "path": "/connect",
-        "displayName": "Kapcsolat"
-    },
-]
+import AppLink from "../AppLink"
+import LanguageSelector from "../LanguageSelector"
 
 const Navigation = () => {
+    const intl = useIntl()
+
+    const serviceName = intl.formatMessage({id: "navigation.service"})
+    const contactName = intl.formatMessage({id: "navigation.contact"})
+    const aboutName = intl.formatMessage({id: "navigation.about"})
+    const blogName = intl.formatMessage({id: "navigation.blog"})
+
+    const routes = [
+        {
+            "path": "/",
+            "displayName": serviceName
+        },
+        {
+            "path": "/blog",
+            "displayName": blogName
+        },
+        {
+            "path": "/about",
+            "displayName": aboutName
+        },
+        // {
+        //     "path": "/single-dnd",
+        //     "displayName": "Zsebek"
+        // },
+        // {
+        //     "path": "/industrial-solution",
+        //     "displayName": "Ipari megoldások"
+        // },
+        // {
+        //     "path": "/image-compare",
+        //     "displayName": "Kép összehasonlítás"
+        // },
+        // {
+        //     "path": "/chess",
+        //     "displayName": "Sakk"
+        // },
+        {
+            "path": "/connect",
+            "displayName": contactName
+        },
+    ]
+
     return (
-        <ul className="flex flex-row gap-4 p-2 uppercase">
-            {
-                routes.map(route => {
-                    return <li key={route.path}>
-                        <AppLink path={route.path} displayName={route.displayName}/>
-                    </li>
-                })
-            }
-        </ul>
+        <div className="flex flex-row justify-between p-2">
+            <ul className="flex flex-col lg:flex-row gap-4 uppercase">
+                {
+                    routes.map(route => {
+                        return <li key={route.path}>
+                            <AppLink path={route.path} displayName={route.displayName}/>
+                        </li>
+                    })
+                }
+            </ul>
+            <LanguageSelector/>
+        </div>
     )
 }
 

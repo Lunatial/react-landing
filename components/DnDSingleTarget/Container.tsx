@@ -32,7 +32,7 @@ const initialContents = [
 
 export type pocketContentType = { id: number, contentText: string }
 
-export const Container = memo(function DnDExample() {
+export const DnDContainer = memo(function DnD() {
     const [currentContent, setContent] = useState<pocketContentType>()
     const [pocketContent, setPocketContent] = useState<pocketContentType[]>(initialContents)
 

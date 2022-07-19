@@ -1,0 +1,12 @@
+{
+  "navigation.service": "Szolgáltatás",
+  "navigation.contact": "Kapcsolat",
+  "navigation.about": "Rólunk",
+  "navigation.blog": "Blog",
+
+  "page.home.head.title": "Next.js i18n example",
+  "page.home.head.meta.description": "Next.js i18n example - English",
+  "page.home.title": "Kezdőlap",
+
+  "general.loading": "Töltődik"
+}

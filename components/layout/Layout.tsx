@@ -10,7 +10,11 @@ type LayoutProps = {
 export default function Layout({children}: LayoutProps) {
     return (
         <div className="box-border flex flex-col h-screen font-Montserrat">
-            <Navigation/>
+            <header>
+                <nav>
+                    <Navigation/>
+                </nav>
+            </header>
             <main className="flex flex-grow flex-col">
                 {children}
             </main>
