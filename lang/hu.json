@@ -4,9 +4,12 @@
   "navigation.about": "Rólunk",
   "navigation.blog": "Blog",
 
-  "page.home.head.title": "Next.js i18n example",
-  "page.home.head.meta.description": "Next.js i18n example - English",
-  "page.home.title": "Kezdőlap",
+  "page.home.head.title": "React JS fejlesztési szolgáltatás | Interaktív felhasználói felület készítése | React.js szakértők",
+  "page.home.head.meta.description": "A React.js fejlesztői szolgáltatás jellemzői és előnyei. Webalkalmazás létrehozása legjobban teljesítő JavaScript könyvtárral. React JS szolgáltatás.",
+  "page.home.title": "React",
+  "page.home.subTitle": "Web projektek",
+  "page.home.tryThis": "Próbáld ki",
 
-  "general.loading": "Töltődik"
+  "general.loading": "Töltődik",
+  "general.lorem": "Lórum ipse természetesen fedik kanizgál az iccer számára. Fika opláz a reszték ciásra vagy a vigásra is. A zsitás varodik a varttalan cestézik magozás velgerterzésére is. A reszték ciásokra nincs kesztő szedő lüktet e spikben, de már a vigások szundája furikál győző rasztós prin perásokat."
 }

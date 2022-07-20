@@ -6,7 +6,10 @@
 
   "page.home.head.title": "React JS development Service | Build interactive UI | React.js experts",
   "page.home.head.meta.description": "Features and benefits of React.js development service. Create web app with top performing JavaScript library. React JS Service.",
-  "page.home.title": "HomePage",
+  "page.home.title": "Create",
+  "page.home.subTitle": "Web projects",
+  "page.home.tryThis": "Try this",
 
-  "general.loading": "Loading"
+  "general.loading": "Loading",
+  "general.lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, accusantium aliquam amet aperiam cum dicta dignissimos eos hic iusto laudantium magnam natus neque obcaecati quas quis sequi sit velit!"
 }

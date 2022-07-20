@@ -47,7 +47,7 @@ const Navigation = () => {
     ]
 
     return (
-        <div className="flex flex-row justify-between p-2">
+        <div className="flex flex-row justify-between p-2 bg-themeable-dark">
             <ul className="flex flex-col lg:flex-row gap-4 uppercase">
                 {
                     routes.map(route => {

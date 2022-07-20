@@ -21,13 +21,13 @@ const ConnectPage = () => {
                 description={`Lenoa`}
             />
             <h1 className="text-5xl text-center font-medium my-10 font-VinSansPro">KAPCSOLAT</h1>
-            <hr className="border-solid border-2 rounded w-1/4 border-black mx-auto my-5"/>
+
             <p className="text-lg text-center my-5">
                 <span className="font-medium">Telefon: </span>
                 +36 90 666 999
             </p>
             <Map mapContainerStyle={mapContainerStyle}/>
-            <hr className="border-solid border-2 rounded w-1/4 border-black mx-auto my-10"/>
+
         </div>
     )
 }

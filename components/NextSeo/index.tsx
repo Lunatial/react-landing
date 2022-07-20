@@ -6,14 +6,15 @@ type NextSeoComponentProps = {
 }
 
 const NextSeoComponent = (props: NextSeoComponentProps) => {
-    const {title = "Lenoa Title", description = "Lenoa description"} = props
+    const {title = "React Landing Title", description = "React Landing Description"} = props
 
     //TODO rendesen beállítani
     return <NextSeo
         title={title}
         description={description}
-        canonical={"https://test-lenoa.netlify.app/"}
+        canonical={"https://test-react-landing.netlify.app/"}
         openGraph={{
+            site_name: title,
             url: '/',
             title: title,
             description: description,
@@ -35,7 +36,6 @@ const NextSeoComponent = (props: NextSeoComponentProps) => {
                 {url: 'https://www.example.ie/og-image-03.jpg?webp'},
                 {url: 'https://www.example.ie/og-image-04.jpg?webp'},
             ],
-            site_name: title,
         }}
         twitter={{
             handle: '@handle',

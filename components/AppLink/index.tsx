@@ -7,8 +7,8 @@ type AppLinkProps = {
     locale?: string
 }
 
-const commonClasses = "text-lg text-black font-medium hover:text-indigo-600 transition-all"
-const activeClasses = "text-indigo-400"
+const commonClasses = "text-lg text-themeable-lightGray hover:text-themeable-brightGreen hover:animate-pulse font-medium transition-all"
+const activeClasses = "font-bold text-xl"
 const AppLink = (props: AppLinkProps) => {
     const {path, displayName, locale} = props
     const router = useRouter()

@@ -14,6 +14,7 @@ import hu from "../lang/hu.json"
 
 import Layout from '../components/layout/Layout'
 import {ModalProvider} from '../contexts/ModalProvider'
+import {ThemeProvider} from '../contexts/ThemeProvider'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -53,22 +54,24 @@ function MyApp({Component, pageProps, router}: AppProps) {
                             <meta name="theme-color" content="#FFFFFF"/>
                             <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
                         </Head>
-                        <NextNProgress color="rgb(59, 130, 246)" options={{showSpinner: false}}/>
-                        <Layout>
-                            <ModalProvider>
-                                <Component {...pageProps} />
-                            </ModalProvider>
-                            <ToastContainer
-                                position="top-right"
-                                autoClose={5000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover/>
-                        </Layout>
+                        <NextNProgress color="#42E3BA" options={{showSpinner: false}}/>
+                        <ThemeProvider>
+                            <Layout>
+                                <ModalProvider>
+                                    <Component {...pageProps} />
+                                </ModalProvider>
+                                <ToastContainer
+                                    position="top-right"
+                                    autoClose={5000}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    rtl={false}
+                                    pauseOnFocusLoss
+                                    draggable
+                                    pauseOnHover/>
+                            </Layout>
+                        </ThemeProvider>
                     </motion.div>
                 </AnimatePresence>
             </DndProvider>

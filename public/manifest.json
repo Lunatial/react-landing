@@ -1,6 +1,6 @@
 {
-  "name": "leona-coffee",
-  "short_name": "Leona",
+  "name": "skyline-react-landing",
+  "short_name": "React Landing",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -11,11 +11,12 @@
     {
       "src": "/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#1F1D26",
+  "background_color": "#1F1D26",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

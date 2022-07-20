@@ -7,7 +7,9 @@ const LanguageSelector = () => {
     return (
         <ul className="flex flex-row gap-4 uppercase">
             {[...locales!].sort().map((item) => (
-                <li key={item} className={locale === item ? "text-indigo-400" : "text-black"}>
+                <li
+                    key={item}
+                    className={locale === item ? "text-themeable-brightGreen font-bold text-xl" : "text-themeable-lightGray font-medium text-lg hover:animate-pulse"}>
                     <Link href={pathname} locale={item}>
                         {item}
                     </Link>

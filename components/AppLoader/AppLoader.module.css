@@ -1,9 +1,9 @@
 @keyframes rotate {
-    0% {
+    from {
         transform: rotate(0);
     }
 
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
@@ -20,15 +20,15 @@
 
 @keyframes text-color {
     0% {
-        color: rgba(0, 0, 0, 1);
+        color: rgba(187, 226, 207, 1);
     }
 
     50% {
-        color: rgba(0, 0, 0, .5);
+        color: rgba(187, 226, 207, .5);
     }
 
     100% {
-        color: rgba(0, 0, 0, .1);
+        color: rgba(187, 226, 207, .1);
     }
 }
 
@@ -42,6 +42,7 @@
     overflow: hidden;
     position: relative;
     animation: text-color 2s ease-in-out infinite alternate;
+    user-select: none;
 }
 
 .spinner::before,
@@ -52,14 +53,13 @@
     height: 100%;
     border-radius: 50%;
     border: 0.35rem solid transparent;
-    mix-blend-mode: overlay;
-    animation: rotate var(--duration) var(--timing) infinite;
-    cursor: pointer;
+    mix-blend-mode: color-dodge;
+    animation: rotate var(--duration) var(--timing) infinite normal;
 }
 
 .spinner:hover::before,
 .spinner:hover::after {
-    animation: negativRotate var(--duration) var(--timing) infinite;
+    animation: rotate var(--duration) var(--timing) infinite reverse;
 }
 
 .spinner::before {

@@ -61,7 +61,7 @@ const Footer = () => {
                 </div>
                 <div className="basis-1/2 lg:basis-1/5 flex flex-col text-center lg:text-left">
                     <p className="text-4xl font-medium my-4 font-VinSansPro">
-                        SITEMAP
+                        Footer column
                     </p>
                     {/*{*/}
                     {/*    routes.map(route => {*/}
