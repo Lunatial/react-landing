@@ -30,7 +30,7 @@ export function ThemeProvider({children}: ThemeProviderProps) {
             }}
         >
             <div
-                className={`themeable-override ${isPrimary ? "themeable-primary-theme" : "themeable-secondary-theme"}`}>
+                className={`${isPrimary ? "themeable-primary-theme" : "themeable-secondary-theme"}`}>
                 {children}
             </div>
         </ThemeContext.Provider>

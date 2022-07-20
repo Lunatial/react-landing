@@ -15,7 +15,9 @@ const IndexPage = () => {
                 title={seoTitle}
                 description={seoDescription}
             />
+            {/*<div className="themeable-secondary-theme">*/}
             <HeroSection/>
+            {/*</div>*/}
         </>
     )
 }

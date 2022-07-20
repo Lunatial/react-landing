@@ -1,11 +1,11 @@
 type ColoredTextProps = {
-    color: 'blue' | 'green' | 'yellow' | 'lightGray' | 'orange'
+    color: 'text-themeable-blue' | 'text-themeable-green' | 'text-themeable-yellow' | 'text-themeable-lightGray' | 'text-themeable-orange'
     children: string
 }
 
 const ColoredText = ({color, children}: ColoredTextProps) => {
     return (
-        <span className={`themeable-override text-themeable-${color}`}>
+        <span className={color}>
             {children}
         </span>
     )
