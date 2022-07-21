@@ -15,20 +15,22 @@ const ConnectPage = () => {
     ), [/* list variables which should trigger a re-render here */])
 
     return (
-        <div className="container mx-auto">
+        <>
             <NextSeo
-                title="Lenoa"
-                description={`Lenoa`}
+                title="connect"
+                description={`connect desc`}
             />
-            <h1 className="text-5xl text-center font-medium my-10 font-VinSansPro">KAPCSOLAT</h1>
-
-            <p className="text-lg text-center my-5">
-                <span className="font-medium">Telefon: </span>
-                +36 90 666 999
-            </p>
-            <Map mapContainerStyle={mapContainerStyle}/>
-
-        </div>
+            <section className="container mx-auto bg-themeable-dark h-full text-themeable-lightGray">
+                <h1 className="text-6xl font-bold my-10 text-center">
+                    KAPCSOLAT
+                </h1>
+                <p className="text-lg text-center my-5">
+                    <span className="font-medium">Telefon: </span>
+                    +36 90 666 999
+                </p>
+                <Map mapContainerStyle={mapContainerStyle}/>
+            </section>
+        </>
     )
 }
 

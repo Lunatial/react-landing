@@ -4,10 +4,10 @@ import {FormattedMessage} from "react-intl"
 import TryMe from "./TryMe"
 import ContactUs from "./ContactUs"
 import ColoredText from "../ColoredTexts"
+import AppLoaderComp from "../AppLoader"
 
 // @ts-ignore
 import heroImg from '../../public/images/Frontendnyito.png?webp'
-import AppLoaderComp from "../AppLoader";
 
 const HeroSection = () => {
     return (
