@@ -2,6 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
 @font-face {
     font-family: "Vin Sans Pro";
     src: url("/fonts/vin_sans/VinSansPro-Medium.ttf") format("truetype");

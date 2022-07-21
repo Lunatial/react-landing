@@ -10,7 +10,7 @@ import Link from "next/link"
 
 const Footer = () => {
     return (
-        <footer className='mx-auto w-full bg-gray-50 p-14'>
+        <footer className='mx-auto w-full bg-themeable-dark p-14 text-themeable-lightGray'>
             <div className="block sm:flex flex-row flex-wrap">
                 <div className="basis-1/2 lg:basis-2/5">
                     <Link href="/" passHref>
@@ -18,7 +18,7 @@ const Footer = () => {
                             logo
                         </div>
                     </Link>
-                    <hr className="border-solid border-2 rounded w-1/2 border-black mx-auto my-4"/>
+                    <hr className="border-solid border-2 rounded w-1/2 border-themeable-lightGray mx-auto my-4"/>
                     <p className="mx-auto w-full md:w-5/12 leading-loose text-3xl text-center font-Playfair">
                         Jajj, de jelige
                     </p>
@@ -63,6 +63,9 @@ const Footer = () => {
                     <p className="text-4xl font-medium my-4 font-VinSansPro">
                         Footer column
                     </p>
+                    <form id="contactForm">
+                        form ide
+                    </form>
                     {/*{*/}
                     {/*    routes.map(route => {*/}
                     {/*        return <Link key={route.path} href={route.path} passHref>*/}
