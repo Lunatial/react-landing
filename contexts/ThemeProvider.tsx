@@ -1,4 +1,4 @@
-import {createContext, ReactNode, useContext, useState, memo} from "react"
+import {createContext, ReactNode, useContext, useState,} from "react"
 
 type ThemeProviderProps = {
     children: ReactNode
@@ -6,13 +6,21 @@ type ThemeProviderProps = {
 
 type ThemeContext = {
     isPrimary: boolean
+}
+
+type ThemeDispatchContext = {
     changeTheme: () => void
 }
 
 const ThemeContext = createContext({} as ThemeContext)
+const ThemeDispatchContext = createContext({} as ThemeDispatchContext)
 
 export function useTheme() {
     return useContext(ThemeContext)
+}
+
+export function useDispatchTheme() {
+    return useContext(ThemeDispatchContext)
 }
 
 const ThemeProvider = ({children}: ThemeProviderProps) => {
@@ -21,19 +29,16 @@ const ThemeProvider = ({children}: ThemeProviderProps) => {
     const changeTheme = () => {
         setIsPrimary(prevState => !prevState)
     }
-    console.log('ThemeProvider rerender')
+
     return (
-        <ThemeContext.Provider
-            value={{
-                isPrimary,
-                changeTheme
-            }}
-        >
-            <div
-                className={isPrimary ? "themeable-primary-theme" : "themeable-secondary-theme"}>
-                {children}
-            </div>
-        </ThemeContext.Provider>
+        <ThemeDispatchContext.Provider value={{changeTheme}}>
+            <ThemeContext.Provider value={{isPrimary}}>
+                <div
+                    className={isPrimary ? "themeable-primary-theme" : "themeable-secondary-theme"}>
+                    {children}
+                </div>
+            </ThemeContext.Provider>
+        </ThemeDispatchContext.Provider>
     )
 }
 

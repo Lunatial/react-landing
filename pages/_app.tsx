@@ -27,35 +27,35 @@ const messages = {
 
 function MyApp({Component, pageProps, router}: AppProps) {
     const {locale} = useRouter()
-    console.log('root rerender')
+
     return (
         // @ts-ignore
         <IntlProvider locale={locale} messages={messages[locale]}>
-            <DndProvider backend={HTML5Backend}>
-                <AnimatePresence>
-                    <motion.div
-                        key={router.route}
-                        initial="pageInitial"
-                        animate="pageAnimate"
-                        exit="pageExit"
-                        variants={{
-                            pageInitial: {
-                                opacity: 0
-                            },
-                            pageAnimate: {
-                                opacity: 1
-                            },
-                            pageExit: {
-                                filter: 'grayscale(80%)',
-                                opacity: 0.8,
-                            },
-                        }}>
-                        <Head>
-                            <meta name="theme-color" content="#FFFFFF"/>
-                            <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
-                        </Head>
-                        <NextNProgress color="#42E3BA" options={{showSpinner: false}}/>
-                        <ThemeProvider>
+            <ThemeProvider>
+                <DndProvider backend={HTML5Backend}>
+                    <AnimatePresence>
+                        <motion.div
+                            key={router.route}
+                            initial="pageInitial"
+                            animate="pageAnimate"
+                            exit="pageExit"
+                            variants={{
+                                pageInitial: {
+                                    opacity: 0
+                                },
+                                pageAnimate: {
+                                    opacity: 1
+                                },
+                                pageExit: {
+                                    filter: 'grayscale(80%)',
+                                    opacity: 0.8,
+                                },
+                            }}>
+                            <Head>
+                                <meta name="theme-color" content="#FFFFFF"/>
+                                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
+                            </Head>
+                            <NextNProgress color="#42E3BA" options={{showSpinner: false}}/>
                             <Layout>
                                 <ModalProvider>
                                     <Component {...pageProps} />
@@ -71,10 +71,10 @@ function MyApp({Component, pageProps, router}: AppProps) {
                                     draggable
                                     pauseOnHover/>
                             </Layout>
-                        </ThemeProvider>
-                    </motion.div>
-                </AnimatePresence>
-            </DndProvider>
+                        </motion.div>
+                    </AnimatePresence>
+                </DndProvider>
+            </ThemeProvider>
         </IntlProvider>
     )
 }

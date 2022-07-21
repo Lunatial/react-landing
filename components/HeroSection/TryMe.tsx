@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import {FormattedMessage} from "react-intl"
 
-import {useTheme} from "../../contexts/ThemeProvider"
+import {useDispatchTheme} from "../../contexts/ThemeProvider"
 
 // @ts-ignore
 import reactLogo from '../../public/images/reactLogo.png?webp'
 
 const TryMe = () => {
-    const {changeTheme} = useTheme()
+    const {changeTheme} = useDispatchTheme()
 
     return (
         <div className="flex flex-col items-center">
