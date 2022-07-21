@@ -20,15 +20,17 @@ const ConnectPage = () => {
                 title="connect"
                 description={`connect desc`}
             />
-            <section className="container mx-auto bg-themeable-dark h-full text-themeable-lightGray">
-                <h1 className="text-6xl font-bold my-10 text-center">
-                    KAPCSOLAT
-                </h1>
-                <p className="text-lg text-center my-5">
-                    <span className="font-medium">Telefon: </span>
-                    +36 90 666 999
-                </p>
-                <Map mapContainerStyle={mapContainerStyle}/>
+            <section className="bg-themeable-dark h-full text-themeable-lightGray">
+                <div className="container mx-auto ">
+                    <h1 className="text-6xl font-bold my-10 text-center">
+                        KAPCSOLAT
+                    </h1>
+                    <p className="text-lg text-center my-5">
+                        <span className="font-medium">Telefon: </span>
+                        +36 90 666 999
+                    </p>
+                    <Map mapContainerStyle={mapContainerStyle}/>
+                </div>
             </section>
         </>
     )
