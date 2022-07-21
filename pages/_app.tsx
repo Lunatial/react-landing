@@ -41,13 +41,13 @@ function MyApp({Component, pageProps, router}: AppProps) {
                             exit="pageExit"
                             variants={{
                                 pageInitial: {
-                                    opacity: 0
+                                    opacity: 0,
                                 },
                                 pageAnimate: {
                                     opacity: 1
                                 },
                                 pageExit: {
-                                    filter: 'grayscale(80%)',
+                                    filter: 'hue-rotate(90deg)',
                                     opacity: 0.8,
                                 },
                             }}>
