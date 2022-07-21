@@ -50,14 +50,14 @@ module.exports = {
                     name: 'secondary-theme',
                     palette: {
                         // make sure all your themes have your customized keys to avoid problems when switching themes
-                        dark: '#2a0a9a',
-                        brightGreen: '#41a8f6',
-                        lightGreen: '#25417e',
-                        blue: '#59759f',
-                        green: '#10590c',
-                        yellow: '#d59711',
-                        lightGray: '#b4c2d5',
-                        orange: '#a84a1d',
+                        dark: '#E30303',
+                        brightGreen: '#00FDFD',
+                        lightGreen: '#8C00FC',
+                        blue: '#FFFF32',
+                        green: '#CEFF03',
+                        yellow: '#37A1CB',
+                        lightGray: '#AC92EB',
+                        orange: '#ED553B',
                     }
                 }
             ]

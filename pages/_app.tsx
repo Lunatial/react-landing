@@ -27,7 +27,7 @@ const messages = {
 
 function MyApp({Component, pageProps, router}: AppProps) {
     const {locale} = useRouter()
-
+    console.log('root rerender')
     return (
         // @ts-ignore
         <IntlProvider locale={locale} messages={messages[locale]}>

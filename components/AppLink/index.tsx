@@ -9,6 +9,7 @@ type AppLinkProps = {
 
 const commonClasses = "text-lg text-themeable-lightGray hover:text-themeable-brightGreen hover:animate-pulse font-medium transition-all"
 const activeClasses = "font-bold text-xl"
+
 const AppLink = (props: AppLinkProps) => {
     const {path, displayName, locale} = props
     const router = useRouter()
@@ -16,14 +17,15 @@ const AppLink = (props: AppLinkProps) => {
     const activeClassName = router.asPath === path
         ? `${commonClasses} ${activeClasses}`
         : commonClasses
+
     return (
         <span className={activeClassName}>
-        <Link href={path} locale={locale}>
-            <a>
-                {displayName}
-            </a>
-        </Link>
-            </span>
+            <Link href={path} locale={locale}>
+                <a>
+                    {displayName}
+                </a>
+            </Link>
+        </span>
     )
 }
 

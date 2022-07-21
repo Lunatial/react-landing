@@ -1,12 +1,13 @@
 import Image from "next/image"
 import {FormattedMessage} from "react-intl"
 
-import AppLoader from "../AppLoader"
 import TryMe from "./TryMe"
+import ContactUs from "./ContactUs"
 import ColoredText from "../ColoredTexts"
 
 // @ts-ignore
 import heroImg from '../../public/images/Frontendnyito.png?webp'
+import AppLoaderComp from "../AppLoader";
 
 const HeroSection = () => {
     return (
@@ -16,7 +17,13 @@ const HeroSection = () => {
             <div className="flex flex-col lg:flex-row gap-50 container mx-auto h-full items-center">
                 <div className="basis-1/2 w-full">
                     <div className="max-w-xl">
-                        <Image layout='responsive' height={600} width={600} src={heroImg} alt="Hero img"/>
+                        <Image
+                            layout='responsive'
+                            height={600}
+                            width={600}
+                            priority
+                            src={heroImg}
+                            alt="Hero img"/>
                     </div>
                 </div>
                 <div className="basis-1/2">
@@ -33,9 +40,10 @@ const HeroSection = () => {
                         szinte egyszerre
                         válaszoltuk, hogy igen, <ColoredText color="text-themeable-orange">Orbán Viktoron</ColoredText>.
                     </p>
-                    <div className="flex flex-row justify-around mt-12">
+                    <div className="flex flex-col sm:flex-row justify-around mt-12">
                         <TryMe/>
-                        <AppLoader/>
+                        <ContactUs/>
+                        <AppLoaderComp/>
                     </div>
                 </div>
             </div>
