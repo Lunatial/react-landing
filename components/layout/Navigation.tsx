@@ -47,7 +47,7 @@ const Navigation = () => {
     ]
 
     return (
-        <div className="flex flex-row justify-between p-2 bg-themeable-dark">
+        <div className="flex flex-row justify-between p-2 drop-shadow-lg bg-themeable-dark">
             <div className="block md:hidden cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="#AC92EB">
                     <path

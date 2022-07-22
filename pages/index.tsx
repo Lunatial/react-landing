@@ -2,6 +2,7 @@ import {useIntl} from "react-intl"
 
 import NextSeo from "../components/NextSeo"
 import HeroSection from "../components/HeroSection"
+import Index from "../components/SecondSection"
 
 const IndexPage = () => {
     const intl = useIntl()
@@ -17,6 +18,7 @@ const IndexPage = () => {
             />
             {/*<div className="themeable-secondary-theme">*/}
             <HeroSection/>
+            <Index/>
             {/*</div>*/}
         </>
     )

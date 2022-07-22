@@ -52,7 +52,8 @@ function MyApp({Component, pageProps, router}: AppProps) {
                                 },
                             }}>
                             <Head>
-                                <meta name="theme-color" content="#FFFFFF"/>
+                                <meta name="author" content="SkyLine-Computer Kft.<Mirkó Feleky - mirko.feleky@skyl.hu>"/>
+                                <meta name="theme-color" content="#1F1D26"/>
                                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
                             </Head>
                             <NextNProgress color="#42E3BA" options={{showSpinner: false}}/>

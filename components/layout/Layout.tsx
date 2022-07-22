@@ -10,7 +10,7 @@ type LayoutProps = {
 export default function Layout({children}: LayoutProps) {
     return (
         <div className="box-border flex flex-col h-screen font-Montserrat">
-            <header>
+            <header className="fixed top-0 z-10 w-full">
                 <nav>
                     <Navigation/>
                 </nav>
