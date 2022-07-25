@@ -27,7 +27,6 @@ const SmallMenuOverlay = ({onOpenMenu, routes}: SmallMenuOverlayProps) => {
             .then(() => {
                 menuItems
                     .start((i) => {
-                        console.log(i)
                         return {
                             width: ['0%', '100%'],
                             opacity: ['0%', '100%'],

@@ -1,12 +1,12 @@
 import Image from "next/image"
-import {FormattedMessage} from "react-intl"
+import {FormattedMessage,} from "react-intl"
 
 import TryMe from "./TryMe"
 import ContactUs from "./ContactUs"
 import ColoredText from "../ColoredTexts"
 import AppLoaderComp from "../AppLoader"
-import SectionTitle from "../layout/SectionTitle"
 import SectionContentText from "../layout/SectionContentText"
+import ChangingH2 from "./ChangingH2"
 
 // @ts-ignore
 import heroImg from '../../public/images/Frontendnyito.png?webp'
@@ -32,9 +32,7 @@ const HeroSection = () => {
                     <h1 className="text-6xl font-bold my-10 text-themeable-lightGray">
                         <FormattedMessage id="page.home.title"/>
                     </h1>
-                    <SectionTitle>
-                        <FormattedMessage id="page.home.subTitle"/>
-                    </SectionTitle>
+                    <ChangingH2/>
                     <SectionContentText>
                         <ColoredText color="text-themeable-blue">„Lesznek még ennél többen is?”</ColoredText>
                         – kérdezte a tusványosszűz fotós kollégánk a bálványosi szabadegyetem nulladik napján
