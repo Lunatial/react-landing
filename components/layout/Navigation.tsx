@@ -1,6 +1,8 @@
 import {useState} from "react"
 import {useIntl} from "react-intl"
 
+import {AnimatePresence, motion} from "framer-motion"
+
 import AppLink from "../AppLink"
 import LanguageSelector from "../LanguageSelector"
 import {SmallMenuOverlay} from "../SmallMenuOverlay"
@@ -54,11 +56,11 @@ const Navigation = () => {
     }
 
     return (
-        <>
+        <AnimatePresence>
             {
                 open
-                    ? <SmallMenuOverlay onOpenMenu={handleOpenMenu}/>
-                    : <div className="flex flex-row justify-between p-2 drop-shadow-lg bg-themeable-dark">
+                    ? <SmallMenuOverlay onOpenMenu={handleOpenMenu} routes={routes}/>
+                    : <motion.div key="normalMenu" className="flex flex-row justify-between p-2 drop-shadow-lg">
                         <div className="block md:hidden cursor-pointer" onClick={handleOpenMenu}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="#AC92EB">
                                 <path
@@ -75,9 +77,9 @@ const Navigation = () => {
                             }
                         </ul>
                         <LanguageSelector/>
-                    </div>
+                    </motion.div>
             }
-        </>
+        </AnimatePresence>
     )
 }
 

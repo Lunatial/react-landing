@@ -5,7 +5,7 @@ const LanguageSelector = () => {
     const {locales, locale, pathname} = useRouter()
 
     return (
-        <ul className="flex flex-row gap-4 uppercase">
+        <ul className="flex flex-row gap-4 uppercase select-none">
             {[...locales!].sort().map((item) => (
                 <li
                     key={item}
